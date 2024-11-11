@@ -7,10 +7,10 @@ const Read = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonblob.com/api/jsonblob/1287718524221775872')
+    axios.get('http://localhost:4000/api/movies')
       .then((response) => {
         console.log(response.data);
-        setMovies(response.data.movies);
+        setMovies(response.data);
       })
       .catch((error) => {
         console.log(error);

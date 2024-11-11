@@ -48,38 +48,38 @@ app.get('/api/movies', async (req, res) => {
         res.json(movies);
       });
 
-      app.get('/api/movie/:id', async (req, res) => {
+app.get('/api/movie/:id', async (req, res) => {
         const movie = await Movie.findById(req.params.id);
         res.send(movie);
       });
       
-// route to get a list of movies
-app.get('/api/movies', (req, res) => {
-    const myMovies = [ // array of movie objects
-        {
-            "Title": "Avengers: Infinity War",
-            "Year": "2018",
-            "imdbID": "tt4154756",
-            "Type": "movie",
-            "Poster": "https://example.com/poster1.jpg"
-        },
-        {
-            "Title": "Captain America: Civil War",
-            "Year": "2016",
-            "imdbID": "tt3498820",
-            "Type": "movie",
-            "Poster": "https://example.com/poster2.jpg"
-        },
-        {
-            "Title": "World War Z",
-            "Year": "2013",
-            "imdbID": "tt0816711",
-            "Type": "movie",
-            "Poster": "https://example.com/poster3.jpg"
-        }
-    ];
-    res.status(201).json({ myMovies }); // respond with the movies as JSON
-});
+// // route to get a list of movies
+// app.get('/api/movies', (req, res) => {
+//     const myMovies = [ // array of movie objects
+//         {
+//             "Title": "Avengers: Infinity War",
+//             "Year": "2018",
+//             "imdbID": "tt4154756",
+//             "Type": "movie",
+//             "Poster": "https://example.com/poster1.jpg"
+//         },
+//         {
+//             "Title": "Captain America: Civil War",
+//             "Year": "2016",
+//             "imdbID": "tt3498820",
+//             "Type": "movie",
+//             "Poster": "https://example.com/poster2.jpg"
+//         },
+//         {
+//             "Title": "World War Z",
+//             "Year": "2013",
+//             "imdbID": "tt0816711",
+//             "Type": "movie",
+//             "Poster": "https://example.com/poster3.jpg"
+//         }
+//     ];
+//     res.status(201).json({ myMovies }); // respond with the movies as JSON
+// });
 
 app.post('/api/movies', (req, res) => {
     const movie = req.body;
